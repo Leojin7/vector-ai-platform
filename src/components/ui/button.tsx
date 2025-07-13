@@ -1,8 +1,15 @@
 "use client";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 
-export function Button({ children, className, ...props }) {
+import { motion, HTMLMotionProps } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
+
+interface ButtonProps extends HTMLMotionProps<"button"> {
+  children: ReactNode;
+  className?: string;
+}
+
+export function Button({ children, className, ...props }: ButtonProps) {
   return (
     <motion.button
       whileHover={{ scale: 1.04, backgroundColor: "#1d4ed8" }}
