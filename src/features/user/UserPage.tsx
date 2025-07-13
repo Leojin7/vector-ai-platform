@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Switch } from '@/components/ui/switch'
+
+import Switch from "@/components/ui/Switch"
 
 export default function UserPage() {
   return (
@@ -50,9 +51,12 @@ export default function UserPage() {
                   </div>
                   <div>
                     {setting.hasToggle ? (
-                      <Switch />
+                      <Switch checked={false} onChange={function (checked: boolean): void {
+                        throw new Error('Function not implemented.')
+                      }} />
                     ) : (
-                      <Button variant="outline">Manage</Button>
+                      <Button variant="outline" className="text-white">Manage</Button>
+
                     )}
                   </div>
                 </div>
